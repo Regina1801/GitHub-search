@@ -34,10 +34,16 @@ function addRepository(repository) {
 	const repositoryList = document.querySelector('.repository-list');
 	const listItem = document.createElement('li');
 	listItem.innerHTML = `
-		 <div>${repository.full_name}</div>
-		 <div>Owner: ${repository.owner.login}</div>
-		 <div>Stars: ${repository.stargazers_count}</div>
-		 <button>Remove</button>
+		 <div class='wrapper-block'>
+		 	<div class= 'list-text'>
+			 	<div>Name: ${repository.full_name}</div>
+				 <div>Owner: ${repository.owner.login}</div>
+				 <div>Stars: ${repository.stargazers_count}</div>
+			 </div>
+			 <button class = "delete-button">
+			 <span class="cross-icon"></span>
+			 </button>
+		 </div>
 	`;
 	listItem.querySelector('button').addEventListener('click', () => {
 		listItem.remove();
